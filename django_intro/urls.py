@@ -27,9 +27,13 @@ urlpatterns = [
     # 경로 적는 순서도 중요 / 위 ~ 아래에서 작성되도록 한다. (중복될 경우 위에 있는 것만...)
 
     # path('사용자가 접속하는 경로)
-    path('dinner/', views.dinner),
+    # <> 하면 변수로서 활용
+    path('times/<int:num1>/<int:num2>/', views.times),
+    path('greeting/<str:name>/', views.greeting),
+    path('dinner/<str:name>/', views.dinner),
     path('index/', views.index),
     path('introduce/', views.introduce),
+    path('image/', views.image),
     path('admin/', admin.site.urls),
 ]
 # 우리가 접속할 수 있는 url을 정의하는 곳이라고 생각하면된다.

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dinner</title>
+  <title>Image</title>
 </head>
 <body>
-  <h1>Dinner 추천</h1>
-  {% comment %} 전달받은 context 에서 변수 치환 {% endcomment %}
-  <p>{{ name }}님 오늘 저녁은 {{ pick }}에서 드시죠?!</p> 
+  <h1>☆랜☆덤☆이☆미☆지☆</h1>
+  {% comment %} 경로에는 문자열이 들어가야 하기 때문에 "" 포함 {% endcomment %}
+  <img src="{{ show }}" alt="랜덤이미지">
 </body>
 </html>
