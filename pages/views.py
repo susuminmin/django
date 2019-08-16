@@ -105,3 +105,43 @@ def lotto(request):
     }
 
     return render(request, 'lotto.html', context)
+
+
+def search(request):
+    return render(request, 'search.html')
+
+
+def result(request):
+    # print(request.GET)
+    # <QueryDict: {'query': ['안녕하세요']}> => 꺼내서 쓸 수 있다는 의미
+    category = request.GET.get('category')
+    query = request.GET.get('query')
+    context = {
+        'query': query,
+        'category': category,
+    }
+    return render(request, 'result.html', context)
+
+
+def lotto_pick(request):
+    return render(request, 'lotto_pick.html')
+
+
+def lotto_result(request):
+    numberList = request.GET.get('numberList')
+    numberList = sorted(list(map(int, numberList.split())))
+    realLottoNumbers = sorted([21, 25, 30, 32, 40, 42])
+    # [int(number) for number in lotto_numberList.split()]
+
+    # if realLottoNumbers == numberList:
+    #     result = '퇴사합시다! 고생하셨습니다!'
+    # else:
+    #     result = '야근합시다!!'
+
+    context = {
+        'numberList': numberList,
+        'realLottoNumbers': realLottoNumbers,
+        # 'result': result,
+    }
+
+    return render(request, 'lotto_result.html', context)

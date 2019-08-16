@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lotto Result</title>
+</head>
+<body>
+  <h2>♬ 로또 추첨 결과 ♬</h2>
+  <p style="display:inline">고른 숫자 : </p>
+  {% for number in numberList %}
+    <p style="display:inline"> {{ number }} </p>
+  {% endfor %}<br>
+
+  <p style="display:inline">당첨 숫자 :</p>
+  {% for lottonumber in realLottoNumbers %}
+    <p style="display:inline">{{ lottonumber }}</p>
+  {% endfor %}
+
+  {% if numberList == realLottoNumbers %}
+  <h3>당첨( ͡° ͜ʖ ͡°)!!!</h3>
+  {% else %}
+  <h3>꽝~( ͡° ͜ʖ ͡°)</h3>
+  {% endif %}
+  
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Search</title>
+</head>
+<body>
+  <h1>Search</h1>
+
+  {% comment %} / 꼭 붙이기!!! {% endcomment %}
+  <form action="/result/">
+  {% comment %} 누르면 result로 이동시킴 {% endcomment %}
+
+    <input type="text" name="category" placeholder="카테고리를 입력하세요."><br>
+    <input type="text" name="query" placeholder="검색어를 입력하세요."><br>
+    <button type="submit">검색하기</button>
+  </form>
+  
+</body>
+</html>
