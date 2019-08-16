@@ -26,6 +26,9 @@ urlpatterns = [
     # 경로 적는 순서도 중요 / 위 ~ 아래에서 작성되도록 한다. (중복될 경우 위에 있는 것만...)
     # path('사용자가 접속하는 경로)
     # <> 하면 변수로서 활용
+
+    path('static_example', views.static_example), 
+
     path('lotto_pick/', views.lotto_pick),
     path('lotto_result/', views.lotto_result),
     path('result/', views.result), 

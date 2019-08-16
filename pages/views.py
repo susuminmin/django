@@ -132,16 +132,17 @@ def lotto_result(request):
     numberList = sorted(list(map(int, numberList.split())))
     realLottoNumbers = sorted([21, 25, 30, 32, 40, 42])
     # [int(number) for number in lotto_numberList.split()]
-
     # if realLottoNumbers == numberList:
     #     result = '퇴사합시다! 고생하셨습니다!'
     # else:
     #     result = '야근합시다!!'
-
     context = {
         'numberList': numberList,
         'realLottoNumbers': realLottoNumbers,
         # 'result': result,
     }
-
     return render(request, 'lotto_result.html', context)
+
+
+def static_example(request):
+    return render(request, 'static_example.html')
