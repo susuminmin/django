@@ -23,11 +23,12 @@ from pages import views
 
 urlpatterns = [
     # path('login/', 로그인 페이지 관련 함수) 가 있어야 이쪽으로 이동시킬 수 있음 / 사용자에게 어떤 페이지 보여줄지 이 안에서 결정됨
-
     # 경로 적는 순서도 중요 / 위 ~ 아래에서 작성되도록 한다. (중복될 경우 위에 있는 것만...)
-
     # path('사용자가 접속하는 경로)
     # <> 하면 변수로서 활용
+    path('lotto/', views.lotto),
+    path('isitbirthday/', views.isitbirthday),
+    path('template_language/', views.template_language),
     path('times/<int:num1>/<int:num2>/', views.times),
     path('greeting/<str:name>/', views.greeting),
     path('dinner/<str:name>/', views.dinner),

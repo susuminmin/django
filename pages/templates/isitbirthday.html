@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Is it Birthday?</title>
+</head>
+<body>
+  <h2>Is it Birthday?</h2>
+
+  {% now "m" as month %}
+  {% now "d" as day %}
+
+  {% if month == '08' and day == '16' %}
+    <h2>예</h2>
+  {% else %}
+    <h2>아니오</h2>
+  {% endif %}
+
+</body>
+</html>

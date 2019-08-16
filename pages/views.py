@@ -1,5 +1,6 @@
 # pages/views.py
 from django.shortcuts import render
+from datetime import datetime, date, time
 import random
 
 # Create your views here. 중요!
@@ -59,3 +60,48 @@ def times(request, num1, num2):
             'result': num1 + num2
         }
     return render(request, 'times.html', context)
+
+
+def template_language(request):
+    menus = ['짜장면', '탕수육', '짬뽕', '양장피']
+    my_sentence = 'Life is short, you need python'
+    messages = ['apple', 'banana', 'cucumber']
+    datetimenow = datetime.now()
+    empty_list = []  # empty 이기 때문에 가입한 유저가 없습니다 라고 표현됨
+
+    context = {
+        'menus': menus,
+        'my_sentence': my_sentence,
+        'messages': messages,
+        'empty_list': empty_list,
+        'datetimenow': datetimenow
+    }
+    return render(request, 'template_language.html', context)
+
+
+def isitbirthday(request):
+
+    today = datetime.now()
+
+    if today.month == 8 and today.month == 15:
+        result = '예'
+    else:
+        result = '아니오'
+
+    context = {
+        'result': result
+    }
+
+    return render(request, 'isitbirthday.html', context)
+
+
+def lotto(request):
+    real_lottos = [21, 25, 30, 32, 40, 42]
+    lottos = sorted(list(random.sample(range(1, 46), 6)))
+
+    context = {
+        'real_lottos': real_lottos,
+        'lottos': lottos,
+    }
+
+    return render(request, 'lotto.html', context)
