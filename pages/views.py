@@ -146,3 +146,16 @@ def lotto_result(request):
 
 def static_example(request):
     return render(request, 'static_example.html')
+
+
+def push_number(request):
+    return render(request, 'push_number.html')
+
+
+def pull_number(request):
+    pull_number = request.GET.get('pull_number')
+    pull_number = str(pull_number)
+    context = {
+        'pull_number': pull_number,
+    }
+    return render(request, 'pull_number.html', context) 

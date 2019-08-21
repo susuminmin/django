@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [ # 위 ~ 아래 순서로 읽음
     # Local apps
-    'pages', 
+    'pages',
+    'utilities',
 
     # Third-party apps
 
