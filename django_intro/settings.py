@@ -61,8 +61,8 @@ ROOT_URLCONF = 'django_intro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'django_intro', 'templates')], #2 여기에 추가적으로 작성된 것들도 함께 보겠다.
+        'APP_DIRS': True, #1 APP에서 만들어지는 tem 폴더들을 tem으로 삼을 것인지? pages나 utils 폴더 안 templates 폴더들을 긁어 모으겠다는 의미 / 이걸 False로 두고 다 한군데 모으는 방식도 물론 가능 
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% comment %} 파일 최상단에 적기 {% endcomment %}
 {% load static %}
 {% comment %} static 폴더 안 static 파일에 대한 주소를 생성하는 역할 => 참조하기 위함 {% endcomment %}
@@ -5,18 +6,9 @@
 {% comment %} notes) application에서 static 폴더를 만들고 그 안에서 파일들 관리한다. 
 템플릿에서 불러올때 로드 스태틱 적고, 부를 때 탬플릿 태그 열고 스태틱 파일 불러오겠다 하고 불러오면 된다.  {% endcomment %}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Static Example</title>
-  <link rel="stylesheet" href={% static 'style_sheets/example.css' %}>
-</head>
-<body>
+{% block title %}Static Example{% endblock %}
+{% block content %}
   {% comment %} Static 폴더 안에 있는 강아지.jpg를 가지고 온다. {% endcomment %}
   <h1>STATIC 파일 실습</h1>
-  <img src="{% static '강아지.jpg' %}" alt="강아지">
-</body>
-</html>
+  <img src="{% static 'pages/images/강아지.jpg' %}" alt="강아지">
+{% endblock %}
