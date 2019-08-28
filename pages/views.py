@@ -158,4 +158,18 @@ def pull_number(request):
     context = {
         'pull_number': pull_number,
     }
-    return render(request, 'pages/pull_number.html', context) 
+    return render(request, 'pages/pull_number.html', context)
+
+
+def one(request):
+    return render(request, 'pages/one.html')
+
+
+def two(request):
+    return render(request, 'pages/two.html')
+
+# def hello(request, name):
+# 	context = {
+#         'name': name,	
+# 	}
+#     return render(request, 'hello.html', context)
