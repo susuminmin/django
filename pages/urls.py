@@ -21,8 +21,7 @@ urlpatterns = [
     path('times/<int:num1>/<int:num2>/', views.times),
     path('greeting/<str:name>/', views.greeting),
     path('dinner/<str:name>/', views.dinner),
+    path('introduce/', views.introduce),
+    path('image/', views.image),
     path('index/', views.index),
-
-    # path('introduce/', views.introduce),
-    # path('image/', views.image),
 ]

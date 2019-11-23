@@ -1,13 +1,9 @@
-# pages/views.py
 from django.shortcuts import render
 from datetime import datetime, date, time
 import random
 
-# Create your views here. 중요!
-# 뷰함수 => 사용자에게 보여주는 페이지 명세
 
-
-def index(request):             # 첫번째 인자는 반드시 request 가 온다. => 사용자가 보내는 요청에 대한 정보
+def index(request): # 첫번째 인자는 반드시 request 가 온다. => 사용자가 보내는 요청에 대한 정보
     # 요청이 들어오면 'index.html' 을 보여준다.
     return render(request, 'pages/index.html')    # render의 첫번째 인자도 반드시 request
 
@@ -24,7 +20,6 @@ def dinner(request, name):
         'name': name,
         'pick': pick,
     }
-
     # Django template 으로 context 전달
     # dinner.html 로 context 를 넘김
     return render(request, 'pages/dinner.html', context)
@@ -32,7 +27,7 @@ def dinner(request, name):
 
 def image(request):
     context = {
-        'show': 'https://picsum.photos/500'  # str 은 ''로 감싸줘야 함
+        'image_url': 'https://picsum.photos/500'  # str 은 ''로 감싸줘야 함
     }
     # image url 을 context 에 담아서 image.html 에 전달한다.
     return render(request, 'pages/image.html', context)
@@ -80,19 +75,7 @@ def template_language(request):
 
 
 def isitbirthday(request):
-
-    today = datetime.now()
-
-    if today.month == 8 and today.month == 15:
-        result = '예'
-    else:
-        result = '아니오'
-
-    context = {
-        'result': result
-    }
-
-    return render(request, 'pages/isitbirthday.html', context)
+    return render(request, 'pages/isitbirthday.html')
 
 
 def lotto(request):
@@ -130,8 +113,8 @@ def lotto_pick(request):
 def lotto_result(request):
     numberList = request.GET.get('numberList')
     numberList = sorted(list(map(int, numberList.split())))
+    # numberList = [int(number) for number in numberList.split()]
     realLottoNumbers = sorted([21, 25, 30, 32, 40, 42])
-    # [int(number) for number in lotto_numberList.split()]
     # if realLottoNumbers == numberList:
     #     result = '퇴사합시다! 고생하셨습니다!'
     # else:
@@ -154,7 +137,7 @@ def push_number(request):
 
 def pull_number(request):
     pull_number = request.GET.get('pull_number')
-    pull_number = str(pull_number)
+    # pull_number = str(pull_number)
     context = {
         'pull_number': pull_number,
     }
